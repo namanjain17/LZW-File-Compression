@@ -1,4 +1,5 @@
 #include<bits/stdc++.h>
+//github.com/namanjain17/LZW-File-Compression.git<Paste>include <iostream> 
 #define max_size 65536
 typedef uint16_t int_16;
 using namespace std;
@@ -136,11 +137,11 @@ void decode(){
 }
 
 
-int main(){
+int main(int argc , char *argv[]){
     
 
 
-    fi.open("abc.txt",ios::in);
+    fi.open("input.txt",ios::in);
     fo.open("out.bin",ios::binary);
 
     encode();
