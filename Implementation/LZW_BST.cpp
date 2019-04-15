@@ -140,18 +140,26 @@ void decode(){
 int main(int argc , char *argv[]){
     
 
-
-    fi.open("input.txt",ios::in);
+    clock_t enc_time, dec_time;
+    enc_time = clock();
+    fi.open("abc.txt",ios::in);
     fo.open("out.bin",ios::binary);
 
     encode();
-  
     fi.close();
     fo.close();
-    
+    enc_time = clock()- enc_time;
+    cout << "Processor time taken for encoding: "
+        << (float)enc_time/CLOCKS_PER_SEC << " seconds" << endl;
+
+    dec_time = clock();
     fi.open("out.bin",ios::binary);
     fo.open("res.txt",ios::out);
     decode();
+    dec_time = clock()- dec_time;
+    cout << "Processor time taken for decoding: "
+        << (float)dec_time/CLOCKS_PER_SEC << " seconds" << endl;
+
 }
 
 
